@@ -21,7 +21,7 @@ Instructions to run
    # Create Server
    
     URL: /api/server/create
-    Method: POST \n
+    Method: POST <br>
     Description: Send in the form of an array of objects Several servers can be created in one request
     Body: [{
     "name": "Server Name",
