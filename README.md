@@ -19,90 +19,80 @@ Instructions to run
 6. Using the API for servers
 
    # Create Server
-   
-    URL: /api/server/create
-    Method: POST
-    Description: Send in the form of an array of objects Several servers can be created in one request
-    Body: [{
-    "name": "Server Name",
-    "url": "http://example.com"
+    URL: /api/server/create <br>
+    Method: POST <br>
+    Description: Send in the form of an array of objects Several servers can be created in one request <br>
+    Body: [{ <br>
+    "name": "Server Name", <br>
+    "url": "http://example.com" <br>
     }]
 
    # Get Server By ID
-
-    URL: /api/server/by-id/:id
-    Method: GET
-    URL Parameters:id - The ID of the server to retrieve
+    URL: /api/server/by-id/:id <br>
+    Method: GET <br>
+    URL Parameters:id - The ID of the server to retrieve <br>
     Description: Retrieves the details of the server by ID and last 10 request objects
 
    # Get All Servers
-
-    URL: /api/server/get-all
-    Method: GET
+    URL: /api/server/get-all <br>
+    Method: GET <br>
     Description: Retrieves details of all servers    
 
    # Get Server Requests By ID
-
-    URL: /api/server/requests/:id
-    Method: GET
-    URL Parameters:id - The ID of the server to retrieve
-    Description: Retrieves the details of all requests to the server by id
+    URL: /api/server/requests/:id <br>
+    Method: GET <br>
+    URL Parameters:id - The ID of the server to retrieve <br>
+    Description: Retrieves the requests belonging to the network by id
 
    # Update a Server
-  
-    URL: /api/server/update/:id
-    Method: PUT
-    URL Parameters: id - The ID of the server to update
-    Description: Updates an existing server entry by ID
-    Body: {
-    "name": "Updated Server Name",
-    *or*
-    "url": "http://updated-example.com"
+    URL: /api/server/update/:id <br>
+    Method: PUT <br>
+    URL Parameters: id - The ID of the server to update <br>
+    Description: Updates an existing server entry by ID <br>
+    Body: {<br>
+    "name": "Updated Server Name",<br>
+    *or*<br>
+    "url": "http://updated-example.com"<br>
     }
 
    # Delete Server
+    URL: /api/server/delete/:id <br>
+    Method: DELETE <br>
+    URL Parameters: id - The ID of the server to delete <br>
+    Description: Deletes an existing server entry by ID 
 
-    URL: /api/server/delete/:id
-    Method: DELETE
-    URL Parameters: id - The ID of the server to delete
-    Description: Deletes an existing server entry by ID
+7.  Using the API for email <br>
+    It was not in the requirements of the assignment but I think it was consumed <br>
 
-7.  Using the API for email
-    //It was not in the requirements of the assignment but I think it was consumed
-    
    # Create Email
-
     URL: /api/email/create
     Method: POST
     Description: Creates a new email entry
-    Body: {
-    "name":"your name",
-    "email":"your email"
+    Body: {<br>
+    "name":"your name",<br>
+    "email":"your email"<br>
     }
 
     # Get All Emails
-
      URL: /api/email/get-all
      Method: GET
      Description: Retrieves a list of all email entries
 
     # Update Email
-
      URL: /api/email/update/:id
      Method: PUT
      Description: Updates an existing email or name entry by ID
      URL Parameters:id - The ID of the email to update
-     Body: {
-     "name":"Updates your name",
-      *or*
-     "email":"Updates your email"
+     Body: {<br>
+     "name":"Updates your name",<br>
+      *or*<br>
+     "email":"Updates your email"<br>
      }
 
-     #  Delete Email
-
-      URL: /api/email/delete/:id
-      Method: DELETE
-      URL Parameters: id - The ID of the email to delete
+     # Delete Email
+      URL: /api/email/delete/:id<br>
+      Method: DELETE<br>
+      URL Parameters: id - The ID of the email to delete<br>
       Description: Deletes an email entry by ID
 
 
