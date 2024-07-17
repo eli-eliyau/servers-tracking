@@ -42,7 +42,7 @@ Instructions to run
     URL: /api/server/requests/:id <br>
     Method: GET <br>
     URL Parameters:id - The ID of the server to retrieve <br>
-    Description: Retrieves the requests belonging to the network by id
+    Description: Retrieves the requests belonging to the server by id
 
    # Update a Server
     URL: /api/server/update/:id <br>
@@ -65,20 +65,20 @@ Instructions to run
     It was not in the requirements of the assignment but I think it was consumed <br>
 
    # Create Email
-    URL: /api/email/create
-    Method: POST
-    Description: Creates a new email entry
-    Body: {<br>
-    "name":"your name",<br>
-    "email":"your email"<br>
+   URL: /api/email/create<br>
+    Method: POST<br>
+    Description: Creates a new email entry<br>
+    Body: { <br>
+    "name":"your name", <br>
+    "email":"your email" <br>
     }
 
-   # Get All Emails
+    # Get All Emails
      URL: /api/email/get-all
      Method: GET
      Description: Retrieves a list of all email entries
 
-   # Update Email
+    # Update Email
      URL: /api/email/update/:id
      Method: PUT
      Description: Updates an existing email or name entry by ID
@@ -89,7 +89,7 @@ Instructions to run
      "email":"Updates your email"<br>
      }
 
-   # Delete Email
+     # Delete Email
       URL: /api/email/delete/:id<br>
       Method: DELETE<br>
       URL Parameters: id - The ID of the email to delete<br>
