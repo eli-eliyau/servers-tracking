@@ -90,7 +90,7 @@ Instructions to run
     }
 
    # Delete Email
-    URL: /api/email/delete/:id<br>
+   URL: /api/email/delete/:id<br>
     Method: DELETE<br>
     URL Parameters: id - The ID of the email to delete<br>
     Description: Deletes an email entry by ID
