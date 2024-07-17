@@ -42,7 +42,7 @@ Instructions to run
     URL: /api/server/requests/:id <br>
     Method: GET <br>
     URL Parameters:id - The ID of the server to retrieve <br>
-    Description: Retrieves the requests belonging to the network by id
+    Description: Retrieves the requests belonging to the server by id
 
    # Update a Server
     URL: /api/server/update/:id <br>
