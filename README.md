@@ -65,29 +65,29 @@ Instructions to run
     It was not in the requirements of the assignment but I think it was consumed <br>
 
    # Create Email
-    URL: /api/email/create
-    Method: POST
-    Description: Creates a new email entry
-    Body: {<br>
-    "name":"your name",<br>
-    "email":"your email"<br>
+    URL: /api/email/create<br>
+    Method: POST<br>
+    Description: Creates a new email entry<br>
+    Body: { <br>
+    "name":"your name", <br>
+    "email":"your email" <br>
     }
 
-    # Get All Emails
-     URL: /api/email/get-all
-     Method: GET
-     Description: Retrieves a list of all email entries
+   # Get All Emails
+    URL: /api/email/get-all<br>
+    Method: GET<br>
+    Description: Retrieves a list of all email entries
 
-    # Update Email
-     URL: /api/email/update/:id
-     Method: PUT
-     Description: Updates an existing email or name entry by ID
-     URL Parameters:id - The ID of the email to update
-     Body: {<br>
-     "name":"Updates your name",<br>
-      *or*<br>
-     "email":"Updates your email"<br>
-     }
+   # Update Email
+    URL: /api/email/update/:id<br>
+    Method: PUT<br>
+    Description: Updates an existing email or name entry by ID<br>
+    URL Parameters:id - The ID of the email to update<br>
+    Body: { <br>
+    "name":"Updates your name", <br>
+    *or* <br>
+    "email":"Updates your email"<br>
+    }
 
      # Delete Email
       URL: /api/email/delete/:id<br>
