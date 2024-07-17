@@ -5,6 +5,7 @@ interface RequestResponse {
   time: number;
 }
 
+//The function measures request time and returns status and time
 export const fetchServerStatus = async (url: string): Promise<RequestResponse> => {
   const start = Date.now();
   try {

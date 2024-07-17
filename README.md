@@ -73,12 +73,12 @@ Instructions to run
     "email":"your email"<br>
     }
 
-    # Get All Emails
+   # Get All Emails
      URL: /api/email/get-all
      Method: GET
      Description: Retrieves a list of all email entries
 
-    # Update Email
+   # Update Email
      URL: /api/email/update/:id
      Method: PUT
      Description: Updates an existing email or name entry by ID
@@ -89,7 +89,7 @@ Instructions to run
      "email":"Updates your email"<br>
      }
 
-     # Delete Email
+   # Delete Email
       URL: /api/email/delete/:id<br>
       Method: DELETE<br>
       URL Parameters: id - The ID of the email to delete<br>
