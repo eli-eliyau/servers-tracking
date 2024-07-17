@@ -65,7 +65,7 @@ Instructions to run
     It was not in the requirements of the assignment but I think it was consumed <br>
 
    # Create Email
-    URL: /api/email/create<br>
+   URL: /api/email/create<br>
     Method: POST<br>
     Description: Creates a new email entry<br>
     Body: { <br>
@@ -74,12 +74,12 @@ Instructions to run
     }
 
    # Get All Emails
-    URL: /api/email/get-all<br>
+   URL: /api/email/get-all<br>
     Method: GET<br>
     Description: Retrieves a list of all email entries
 
    # Update Email
-    URL: /api/email/update/:id<br>
+   URL: /api/email/update/:id<br>
     Method: PUT<br>
     Description: Updates an existing email or name entry by ID<br>
     URL Parameters:id - The ID of the email to update<br>
@@ -89,11 +89,11 @@ Instructions to run
     "email":"Updates your email"<br>
     }
 
-     # Delete Email
-      URL: /api/email/delete/:id<br>
-      Method: DELETE<br>
-      URL Parameters: id - The ID of the email to delete<br>
-      Description: Deletes an email entry by ID
+   # Delete Email
+   URL: /api/email/delete/:id<br>
+    Method: DELETE<br>
+    URL Parameters: id - The ID of the email to delete<br>
+    Description: Deletes an email entry by ID
 
 
 
