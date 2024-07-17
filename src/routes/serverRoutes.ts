@@ -4,7 +4,7 @@ import {serverController} from '../controllers/serverController';
 
 const serverRouter = Router();
 
-serverRouter.delete('/:id', serverController.deleteServer)
+serverRouter.delete('/delete/:id', serverController.deleteServer)
     .post('/create', serverController.createServer)
     .put('/update/:id', serverController.updateServer)
     .get('/by-id/:id', serverController.getServerById)

@@ -4,13 +4,12 @@ import knex from '../db/knex';
 
 
 export interface TableEmail {
-    id: string
     name: string
     email: string
 }
 
 
-const createEmail = async (emailData: { name: string, email: string }): Promise<TableEmail> => {
+const createEmail = async (emailData: TableEmail): Promise<TableEmail> => {
     const [server] = await knex('email').insert(emailData).returning('*');
     return server
 };

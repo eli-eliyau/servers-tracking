@@ -1,22 +1,46 @@
 //The controller performs actions and communicates with the DB through the models
 import { Request, Response } from 'express';
-import { webServersModel } from '../models/webServersModel';
+import { Server, webServersModel } from '../models/webServersModel';
 import { requestsModel } from '../models/requestsModel';
+import { checkExistingServers, validateServersData } from '../utils/serverValidation';
 
 
-const createServer = async (req: Request, res: Response) => {
-  const { name, url } = req.body;
+export const createServer = async (req: Request, res: Response) => {
+  const servers: Server[] = req.body;
+  const validationError = validateServersData(servers);
+
+  if (validationError) {
+    return res.status(400).json({ message: validationError });
+  }
+
   try {
-    const newServer = await webServersModel.createServer(name, url);
-    newServer
-      ? res.status(201).json({ message: 'Server created successfully' })
-      : res.status(400).json({ message: 'Invalid request data' });
+    const { existingNames, existingUrls, newServers } = await checkExistingServers(servers);
+
+    let createdServers: Server[] = [];
+    if (newServers.length > 0) {
+      createdServers = await webServersModel.createServers(newServers);
+    }
+    const createdNames = createdServers.map((server) => server.name).join(', ');
+
+    let message = '';
+    if (createdNames) {
+      message += ` Servers created: ${createdNames};`;
+    } else {
+      message += ' No new servers created;';
+    }
+    if (existingNames.length > 0) {
+      message += ` Servers already exist by name: ${existingNames.join(', ')};`;
+    }
+    if (existingUrls.length > 0) {
+      message += ` Servers already exist by URL: ${existingUrls.join(', ')};`;
+    }
+    return res.status(201).json({ message });
+
   } catch (error) {
     console.error('Error creating server:', error);
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-
 
 const getAllServers = async (req: Request, res: Response) => {
   try {
@@ -29,7 +53,6 @@ const getAllServers = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-
 
 const getServerRequests = async (req: Request, res: Response) => {
   const { id } = req.params;
@@ -44,12 +67,14 @@ const getServerRequests = async (req: Request, res: Response) => {
   }
 };
 
-
 const updateServer = async (req: Request, res: Response) => {
   const { id } = req.params;
   const { name, url } = req.body;
+  if (!name || !url) {
+      return res.status(400).json({ message: 'Name and url are required' });
+  }
   try {
-    const updatedCount = await webServersModel.updateServer(id, {name, url});
+    const updatedCount = await webServersModel.updateServer(id, { name, url });
     updatedCount > 0
       ? res.status(200).json({ message: 'Server updated successfully' })
       : res.status(404).json({ message: 'Server not found' });
@@ -58,7 +83,6 @@ const updateServer = async (req: Request, res: Response) => {
     res.status(500).json({ message: 'Internal Server Error' });
   }
 };
-
 
 const deleteServer = async (req: Request, res: Response) => {
   const { id } = req.params;
