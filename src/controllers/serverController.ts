@@ -2,7 +2,7 @@
 import { Request, Response } from 'express';
 import { Server, webServersModel } from '../models/webServersModel';
 import { requestsModel } from '../models/requestsModel';
-import { checkExistingServers, validateServersData } from '../utils/serverValidation';
+import { checkExistingServers, isValidURL, validateServersData } from '../utils/serverValidation';
 
 
 export const createServer = async (req: Request, res: Response) => {
@@ -71,7 +71,10 @@ const updateServer = async (req: Request, res: Response) => {
   const { id } = req.params;
   const { name, url } = req.body;
   if (!name || !url) {
-      return res.status(400).json({ message: 'Name and url are required' });
+    return res.status(400).json({ message: 'Name and url are required' });
+  }
+  if (!isValidURL(url)) {
+    return `Invalid URL format: ${url}`;
   }
   try {
     const updatedCount = await webServersModel.updateServer(id, { name, url });

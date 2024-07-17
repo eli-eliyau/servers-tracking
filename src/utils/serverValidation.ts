@@ -3,7 +3,7 @@ import { Server } from '../models/webServersModel';
 import validator from 'validator';
 
 //The function checks URL integrity
-const isValidURL = (url: string): boolean => {
+export const isValidURL = (url: string): boolean => {
     return validator.isURL(url, { require_protocol: true });
 };
 

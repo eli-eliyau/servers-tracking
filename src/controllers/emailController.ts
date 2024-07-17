@@ -57,6 +57,9 @@ const updateEmail = async (req: Request, res: Response) => {
     if (!name || !email) {
         return res.status(400).json({ message: 'Name and email are required' });
     }
+    if (!validator.isEmail(email)) {
+        return res.status(400).json({ message: 'Invalid email format' });
+    }
     try {
         const updatedCount = await emailModel.updateEmail(req.params.id, req.body);
         updatedCount > 0 ? res.status(200).json({ message: 'Email updated successfully' })
