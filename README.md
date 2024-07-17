@@ -12,7 +12,7 @@ Instructions to run
    name db:server tracking
 
 5. Running a DUMP file
-   cd server tracking\src\db\db_dump\dump.sql
+   cd server tracking\src\db_dump\dump.sql
    
    cmd psql -U postgres -d "server tracking" -f C:\Users\og1\Desktop\Server tracking\src\db\db_dump\dump.sql
 
