@@ -12,19 +12,20 @@ Instructions to run
    name db:server tracking
 
 5. Running a DUMP file
-   cd server tracking\src\db\db_dump\dump.sql
+   cd server tracking\src\db_dump\dump.sql
    
-   cmd psql -U postgres -d "server tracking" -f C:\Users\og1\Desktop\Server tracking\src\db\db_dump\dump.sql
+   cmd psql -U postgres -d "server tracking" -f C:\Users\og1\Desktop\Server tracking\src\db_dump\dump.sql
 
 6. Using the API for servers
 
    # Create Server
-    URL: /api/server/create <br>
-    Method: POST <br>
-    Description: Send in the form of an array of objects Several servers can be created in one request <br>
-    Body: [{ <br>
-    "name": "Server Name", <br>
-    "url": "http://example.com" <br>
+   
+    URL: /api/server/create
+    Method: POST
+    Description: Send in the form of an array of objects Several servers can be created in one request
+    Body: [{
+    "name": "Server Name",
+    "url": "http://example.com"
     }]
 
    # Get Server By ID
