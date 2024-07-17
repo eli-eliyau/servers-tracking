@@ -19,13 +19,12 @@ Instructions to run
 6. Using the API for servers
 
    # Create Server
-   
-    URL: /api/server/create
-    Method: POST
-    Description: Send in the form of an array of objects Several servers can be created in one request
-    Body: [{
-    "name": "Server Name",
-    "url": "http://example.com"
+    URL: /api/server/create<br>
+    Method: POST<br>
+    Description: Send in the form of an array of objects Several servers can be created in one request<br>
+    Body: [{<br>
+    "name": "Server Name",<br>
+    "url": "http://example.com"<br>
     }]
 
    # Get Server By ID
